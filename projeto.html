@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Favicon para dispositivos móveis -->
+<link rel="apple-touch-icon" href="img/Iconarchive-Mothers-Day-Purse.512.png" />
+<link rel="icon" href="img/Iconarchive-Mothers-Day-Purse.512.png" sizes="32x32" />
+<link rel="icon" href="img/Iconarchive-Mothers-Day-Purse.512.png" sizes="16x16" />
+  <title>GarotaCabana Loja</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Cor de fundo para a página inteira */
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #000; /* Texto preto */
+  background-color: #f5f5dc; /* Fundo bege */
+}
+
+/* Atualização para os outros elementos */
+header {
+  background-color: #fcc2c7; /* Fundo do cabeçalho em bege */
+  padding: 20px 0;
+  border-bottom: 1px solid #ccc; /* Ajuste para não ser muito forte */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000; /* Texto preto nos links */
+}
+
+footer {
+  background: #f5f5dc; /* Fundo do rodapé em bege */
+  color: #000; /* Texto preto */
+}
+
+.produto h3, .produtos p, .sobre p, .contato p, .form-group label {
+  color: #000; /* Texto preto em diversos elementos */
+}
+
+/* Cor de fundo para os formulários */
+form {
+  background: #f5f5dc; /* Cor de fundo branca para o formulário */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"] {
+  background-color: #000; /* Fundo preto para o botão de envio */
+  color: #fff; /* Texto branco no botão */
+}
+
+button[type="submit"]:hover {
+  background-color: #444; /* Efeito de hover */
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header {
+  background-color: #fff;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.banner {
+  background-image: url('img/fundo\ bege.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.banner-content h2 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.banner-content p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #444;
+}
+
+.produtos {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.produtos h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.produtos-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.produto {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  transition: 0.3s;
+}
+
+.produto:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.produto img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.produto h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.produto p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+footer {
+  background: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 60px;
+}
+.galeria img {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+.colecao {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #fefefe;
+}
+
+.colecao h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.galeria img {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: #ccc;
+}
+.sobre {
+  padding: 60px 20px;
+  background-color: #fafafa;
+}
+
+.container-sobre {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.texto-sobre {
+  flex: 1 1 500px;
+}
+
+.texto-sobre h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.texto-sobre p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.img-sobre {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.img-sobre img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+.contato {
+  padding: 60px 20px;
+  background-color: #f7f7f7;
+}
+
+.contato h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contato p {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+form {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 18px;
+  margin-bottom: 8px;
+  display: block;
+  color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-top: 8px;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+button[type="submit"] {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #000;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #444;
+}
+/* Estilos para telas pequenas (mobile-first) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .produtos-grid {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .produto {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .sobre .container-sobre {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sobre .img-sobre img {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  .contato form {
+    padding: 20px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+}
+
+/* Estilos para telas médias (tablets) */
+@media (max-width: 1024px) {
+  .produtos-grid {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .produto {
+    width: 48%;
+  }
+}
+
+/* Estilos para telas grandes (desktop) */
+@media (min-width: 1200px) {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .produtos-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .produto {
+    width: 300px;
+  }
+}
+  </style>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+      <div class="container">
+        <h1 class="logo">GarotaCabana</h1>
+        <nav>
+          <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#colecao">Coleção</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  
+    <!-- Banner -->
+    <section class="banner">
+      <div class="banner-content">
+        <h2>Nova Coleção Outono 2025</h2>
+        <p>Estilo, conforto e atitude.</p>
+        <a href="#colecao" class="btn">Ver Coleção</a>
+      </div>
+    </section>
+  
+    <!-- Coleção -->
+    <section class="colecao" id="colecao">
+      <h2>Coleção 2025</h2>
+      <div class="galeria">
+        <img src="img/coleçao outono 5.jpg" alt="Look 1">
+        <img src="img/coleçao outono 6.jpg" alt="Look 2">
+        <img src="img/coleção outono (2).jpg" alt="Look 3">
+        <img src="img/coleção outono (3).jpg" alt="Look 4">
+        <img src="img/coleção outono.jpg" alt="Look 5">
+        <img src="img/coleçao outono 4.jpg" alt="Look 6">
+      </div>
+    </section>
+    <!-- Produtos -->
+    <section class="produtos">
+      <h2>Destaques</h2>
+      <div class="produtos-grid">
+        <div class="produto">
+          <img src="img/jaqueta.jpg" alt="Produto 1" />
+          <h3>Jaqueta Fashion</h3>
+          <p>R$ 249,90</p>
+          <a href="#" class="btn">Comprar</a>
+        </div>
+        <div class="produto">
+          <img src="img/vestido elegante.jpg" alt="Produto 2" />
+          <h3>Vestido Elegante</h3>
+          <p>R$ 179,90</p>
+          <a href="#" class="btn">Comprar</a>
+        </div>
+        <div class="produto">
+          <img src="img/moletom e calça preta.jpg" alt="Produto 3" />
+          <h3>Conjunto Casual</h3>
+          <p>R$ 199,90</p>
+          <a href="#" class="btn">Comprar</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="sobre" id="sobre">
+        <div class="container-sobre">
+          <div class="texto-sobre">
+            <h2>Sobre a GarotaCabana</h2>
+            <p>
+              A GarotaCabana nasceu com a missão de unir estilo e conforto em peças que celebram a autenticidade de cada mulher. Inspirada pelas estações, pela natureza e pela alma feminina, nossa marca aposta em coleções versáteis, elegantes e com aquele toque boho que amamos.
+            </p>
+            <p>
+              Cada peça é pensada com carinho, priorizando qualidade, caimento e personalidade. Vista-se de você mesma. Vista GarotaCabana.
+            </p>
+          </div>
+          <div class="img-sobre">
+            <img src="img/logo GC.jpg" alt="Sobre a marca">
+          </div>
+        </div>
+      </section>
+      
+      <section class="contato" id="contato">
+        <div class="container">
+          <h2>Entre em Contato</h2>
+          <p>Envie-nos uma mensagem. Estamos aqui para ajudar!</p>
+          <form action="#" method="post">
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" required placeholder="Seu e-mail">
+            </div>
+            <div class="form-group">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" required placeholder="Sua mensagem" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn">Enviar Mensagem</button>
+          </form>
+        </div>
+      </section>
+      
+    <footer>
+      <p>&copy; 2025 GarotaCabana. Todos os direitos reservados.</p>
+    </footer>
+    <!-- Modal para imagem -->
+<div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+  <script>
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const closeBtn = document.querySelector(".close");
+  
+    // Seleciona imagens da galeria E dos produtos
+    const allImages = document.querySelectorAll(".galeria img, .produto img");
+  
+    allImages.forEach(img => {
+      img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+      });
+    });
+  
+    closeBtn.onclick = () => {
+      modal.style.display = "none";
+    };
+  
+    window.onclick = (event) => {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
+  
+  </body>
+  
+</html>
